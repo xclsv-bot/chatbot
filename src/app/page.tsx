@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import BetMateWidget from '@/components/BetMateWidget';
 
 export default function Home() {
@@ -8,7 +9,23 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-emerald-900 p-8">
-      <div className="max-w-2xl mx-auto text-center pt-20">
+      {/* Nav */}
+      <nav className="fixed top-0 left-0 right-0 bg-black/20 backdrop-blur z-40">
+        <div className="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🎯</span>
+            <span className="font-bold text-white">BetMate</span>
+          </div>
+          <Link 
+            href="/dashboard" 
+            className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg text-sm font-medium transition"
+          >
+            📊 Live Odds
+          </Link>
+        </div>
+      </nav>
+
+      <div className="max-w-2xl mx-auto text-center pt-24">
         <div className="text-6xl mb-6">🎯</div>
         <h1 className="text-4xl font-bold text-white mb-4">
           BetMate
